@@ -1,21 +1,21 @@
 #Work file for exploring data and testing functions
 
-
+#import libraries
 library(tidyverse)
 library(gridExtra)
 library(readr)
 
+#update working directory and import functions
 setwd("./HomeNetworkAnalysis/")
 source("DataParsing.R")
 source("DataVisualization.R")
-
-directory <- "./Data/"
+data_directory <- "./Data/"
 
 #test process_logs function
-log_data <- process_logs(directory)
+log_data <- process_logs(data_directory)
 str(log_data)
 
-#visualize a daily overvieW
+#visualize a daily overview
 dailyISP = "COMCAST"
 start = "2024-1-11"
 end = "2024-01-15"
