@@ -1,0 +1,72 @@
+REF: 00
+ISP: TMOBILE
+LAN_HARDWARE: OMADA
+MODEM: TMOBILE_GATEWAY
+MTU: 1478
+
+TIME: 1705044724
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 80684ms
+rtt min/avg/max/mdev = 18.881/31.479/69.495/7.172 ms, pipe 5, ipg/ewma 16.140/33.536 ms
+Ping: 57.751 ms
+Download: 73.50 Mbit/s
+Upload: 18.07 Mbit/s
+
+TIME: 1705045131
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 80287ms
+rtt min/avg/max/mdev = 18.688/31.419/125.944/7.213 ms, pipe 9, ipg/ewma 16.060/30.808 ms
+Ping: 52.949 ms
+Download: 14.10 Mbit/s
+Upload: 19.37 Mbit/s
+
+TIME: 1705045535
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 80552ms
+rtt min/avg/max/mdev = 18.717/30.976/65.653/6.635 ms, pipe 5, ipg/ewma 16.113/30.439 ms
+Ping: 55.105 ms
+Download: 235.12 Mbit/s
+Upload: 16.91 Mbit/s
+
+TIME: 1705045940
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 80699ms
+rtt min/avg/max/mdev = 18.708/30.681/63.301/6.436 ms, pipe 5, ipg/ewma 16.143/31.266 ms
+Ping: 54.199 ms
+Download: 236.75 Mbit/s
+Upload: 18.99 Mbit/s
+
+TIME: 1705046344
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 80902ms
+rtt min/avg/max/mdev = 18.685/31.147/74.436/6.781 ms, pipe 5, ipg/ewma 16.183/28.852 ms
+
+TIME: 1705046725
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 80676ms
+rtt min/avg/max/mdev = 18.472/31.117/124.395/6.985 ms, pipe 8, ipg/ewma 16.138/31.997 ms
+Ping: 55.97 ms
+Download: 86.06 Mbit/s
+Upload: 22.08 Mbit/s
+
+TIME: 1705047130
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 80629ms
+rtt min/avg/max/mdev = 18.442/31.902/115.466/7.456 ms, pipe 7, ipg/ewma 16.128/39.949 ms
+Ping: 53.276 ms
+Download: 50.71 Mbit/s
+Upload: 17.79 Mbit/s

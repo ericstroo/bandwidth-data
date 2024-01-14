@@ -1,0 +1,537 @@
+REF: 01
+ISP: COMCAST
+LAN_HARDWARE: OMADA
+MODEM: ISP_GATEWAY
+MTU: 1492
+TEMP_LOW: 17
+TEMP_HIGH: 26
+
+TIME: 1705125287
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69577ms
+rtt min/avg/max/mdev = 8.913/14.638/34.412/1.868 ms, pipe 3, ipg/ewma 13.918/14.531 ms
+Ping: 34.491 ms
+Download: 11.15 Mbit/s
+Upload: 4.12 Mbit/s
+
+TIME: 1705125981
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69340ms
+rtt min/avg/max/mdev = 8.366/14.382/34.589/1.459 ms, pipe 3, ipg/ewma 13.870/14.388 ms
+Ping: 35.717 ms
+Download: 145.72 Mbit/s
+Upload: 24.13 Mbit/s
+
+TIME: 1705126676
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68134ms
+rtt min/avg/max/mdev = 9.760/14.155/24.845/1.163 ms, pipe 2, ipg/ewma 13.629/14.462 ms
+Ping: 33.137 ms
+Download: 47.54 Mbit/s
+Upload: 9.44 Mbit/s
+
+TIME: 1705127374
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68434ms
+rtt min/avg/max/mdev = 11.418/14.206/25.538/1.208 ms, pipe 2, ipg/ewma 13.689/13.930 ms
+Ping: 29.131 ms
+Download: 533.47 Mbit/s
+Upload: 23.81 Mbit/s
+
+TIME: 1705128061
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68268ms
+rtt min/avg/max/mdev = 11.099/14.292/33.540/1.741 ms, pipe 3, ipg/ewma 13.656/14.055 ms
+Ping: 27.726 ms
+Download: 391.15 Mbit/s
+Upload: 24.62 Mbit/s
+
+TIME: 1705128749
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67805ms
+rtt min/avg/max/mdev = 11.809/14.078/24.801/1.308 ms, pipe 2, ipg/ewma 13.563/16.057 ms
+Ping: 29.003 ms
+Download: 477.09 Mbit/s
+Upload: 24.22 Mbit/s
+
+TIME: 1705129436
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 72628ms
+rtt min/avg/max/mdev = 10.901/16.129/38.707/3.547 ms, pipe 3, ipg/ewma 14.528/15.915 ms
+Ping: 28.208 ms
+Download: 464.73 Mbit/s
+Upload: 24.75 Mbit/s
+
+TIME: 1705130127
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 72701ms
+rtt min/avg/max/mdev = 11.525/16.120/30.493/3.281 ms, pipe 3, ipg/ewma 14.543/16.383 ms
+Ping: 27.798 ms
+Download: 55.68 Mbit/s
+Upload: 23.42 Mbit/s
+
+TIME: 1705130823
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 76311ms
+rtt min/avg/max/mdev = 8.287/17.898/36.657/3.925 ms, pipe 3, ipg/ewma 15.265/14.889 ms
+Ping: 29.24 ms
+Download: 560.67 Mbit/s
+Upload: 23.64 Mbit/s
+
+TIME: 1705131517
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 75391ms
+rtt min/avg/max/mdev = 8.988/17.697/33.336/4.026 ms, pipe 3, ipg/ewma 15.081/17.323 ms
+Ping: 28.443 ms
+Download: 707.28 Mbit/s
+Upload: 10.69 Mbit/s
+
+TIME: 1705132212
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68795ms
+rtt min/avg/max/mdev = 8.496/14.852/31.742/2.735 ms, pipe 3, ipg/ewma 13.761/13.772 ms
+Ping: 28.281 ms
+Download: 168.05 Mbit/s
+Upload: 23.81 Mbit/s
+
+TIME: 1705132905
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 71853ms
+rtt min/avg/max/mdev = 9.239/15.286/32.364/2.909 ms, pipe 3, ipg/ewma 14.373/15.617 ms
+Ping: 30.672 ms
+Download: 494.81 Mbit/s
+Upload: 24.25 Mbit/s
+
+TIME: 1705133595
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 71219ms
+rtt min/avg/max/mdev = 8.214/15.258/39.427/3.002 ms, pipe 3, ipg/ewma 14.246/20.927 ms
+Ping: 28.639 ms
+Download: 479.92 Mbit/s
+Upload: 13.89 Mbit/s
+
+TIME: 1705134293
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 71122ms
+rtt min/avg/max/mdev = 11.131/15.348/34.440/3.076 ms, pipe 3, ipg/ewma 14.227/14.371 ms
+Ping: 28.598 ms
+Download: 425.19 Mbit/s
+Upload: 23.71 Mbit/s
+
+TIME: 1705134983
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70927ms
+rtt min/avg/max/mdev = 10.952/15.396/32.384/2.821 ms, pipe 3, ipg/ewma 14.188/13.869 ms
+Ping: 29.242 ms
+Download: 480.30 Mbit/s
+Upload: 23.67 Mbit/s
+
+TIME: 1705135673
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 72871ms
+rtt min/avg/max/mdev = 9.228/15.809/35.637/3.052 ms, pipe 3, ipg/ewma 14.577/17.670 ms
+Ping: 28.952 ms
+Download: 322.06 Mbit/s
+Upload: 24.37 Mbit/s
+
+TIME: 1705136368
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67863ms
+rtt min/avg/max/mdev = 11.326/13.999/25.823/1.305 ms, pipe 2, ipg/ewma 13.575/13.569 ms
+Ping: 28.585 ms
+Download: 457.26 Mbit/s
+Upload: 23.84 Mbit/s
+
+TIME: 1705137054
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67930ms
+rtt min/avg/max/mdev = 8.901/14.140/31.575/1.551 ms, pipe 2, ipg/ewma 13.588/15.379 ms
+Ping: 28.34 ms
+Download: 482.23 Mbit/s
+Upload: 24.75 Mbit/s
+
+TIME: 1705137741
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68108ms
+rtt min/avg/max/mdev = 9.525/14.166/29.369/1.339 ms, pipe 2, ipg/ewma 13.624/14.180 ms
+Ping: 27.538 ms
+Download: 455.05 Mbit/s
+Upload: 23.94 Mbit/s
+
+TIME: 1705138428
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69612ms
+rtt min/avg/max/mdev = 8.299/14.632/30.829/1.897 ms, pipe 3, ipg/ewma 13.925/14.804 ms
+Ping: 21.683 ms
+Download: 324.81 Mbit/s
+Upload: 23.52 Mbit/s
+
+TIME: 1705139121
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 3930 received, 21.4% packet loss, time 73091ms
+rtt min/avg/max/mdev = 9.547/15.771/131.670/6.869 ms, pipe 9, ipg/ewma 14.621/14.083 ms
+Ping: 23.385 ms
+Download: 311.34 Mbit/s
+Upload: 24.63 Mbit/s
+
+TIME: 1705139816
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70505ms
+rtt min/avg/max/mdev = 8.251/14.548/26.405/1.621 ms, pipe 2, ipg/ewma 14.103/14.204 ms
+Ping: 23.406 ms
+Download: 7.12 Mbit/s
+Upload: 12.35 Mbit/s
+
+TIME: 1705140512
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70698ms
+rtt min/avg/max/mdev = 7.717/14.706/28.500/1.788 ms, pipe 2, ipg/ewma 14.142/14.200 ms
+Ping: 21.934 ms
+Download: 339.69 Mbit/s
+Upload: 3.60 Mbit/s
+
+TIME: 1705141205
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69567ms
+rtt min/avg/max/mdev = 8.468/14.500/29.697/1.655 ms, pipe 3, ipg/ewma 13.916/13.906 ms
+Ping: 27.137 ms
+Download: 235.66 Mbit/s
+Upload: 24.42 Mbit/s
+
+TIME: 1705141899
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 72063ms
+rtt min/avg/max/mdev = 7.967/15.837/32.715/2.882 ms, pipe 3, ipg/ewma 14.415/14.803 ms
+Ping: 33.803 ms
+Download: 149.05 Mbit/s
+Upload: 24.87 Mbit/s
+
+TIME: 1705142600
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68597ms
+rtt min/avg/max/mdev = 8.952/14.282/26.014/1.567 ms, pipe 2, ipg/ewma 13.722/14.372 ms
+Ping: 27.104 ms
+Download: 43.24 Mbit/s
+Upload: 10.02 Mbit/s
+
+TIME: 1705143295
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68783ms
+rtt min/avg/max/mdev = 8.084/14.465/31.612/1.747 ms, pipe 3, ipg/ewma 13.759/14.349 ms
+Ping: 25.108 ms
+Download: 320.27 Mbit/s
+Upload: 25.45 Mbit/s
+
+TIME: 1705143986
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68003ms
+rtt min/avg/max/mdev = 8.866/14.283/27.211/1.734 ms, pipe 2, ipg/ewma 13.603/14.719 ms
+Ping: 27.768 ms
+Download: 21.55 Mbit/s
+Upload: 23.49 Mbit/s
+
+TIME: 1705144677
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68556ms
+rtt min/avg/max/mdev = 11.596/14.051/25.338/1.033 ms, pipe 2, ipg/ewma 13.713/13.914 ms
+Ping: 21.953 ms
+Download: 287.66 Mbit/s
+Upload: 24.21 Mbit/s
+
+TIME: 1705145367
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68508ms
+rtt min/avg/max/mdev = 10.364/14.025/23.780/0.996 ms, pipe 2, ipg/ewma 13.704/13.866 ms
+Ping: 20.162 ms
+Download: 158.50 Mbit/s
+Upload: 10.12 Mbit/s
+
+TIME: 1705146062
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 4976 received, 0.48% packet loss, time 70023ms
+rtt min/avg/max/mdev = 11.277/14.266/32.559/1.240 ms, pipe 3, ipg/ewma 14.007/14.045 ms
+Ping: 23.478 ms
+Download: 70.53 Mbit/s
+Upload: 24.86 Mbit/s
+
+TIME: 1705146755
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67447ms
+rtt min/avg/max/mdev = 11.783/13.845/24.158/0.999 ms, pipe 2, ipg/ewma 13.492/13.455 ms
+Ping: 27.751 ms
+Download: 573.02 Mbit/s
+Upload: 23.91 Mbit/s
+
+TIME: 1705147441
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67541ms
+rtt min/avg/max/mdev = 11.786/13.939/26.490/0.959 ms, pipe 2, ipg/ewma 13.510/13.909 ms
+Ping: 27.118 ms
+Download: 608.53 Mbit/s
+Upload: 12.24 Mbit/s
+
+TIME: 1705148131
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68445ms
+rtt min/avg/max/mdev = 11.361/14.036/24.622/0.918 ms, pipe 2, ipg/ewma 13.691/14.047 ms
+Ping: 20.86 ms
+Download: 153.76 Mbit/s
+Upload: 4.18 Mbit/s
+
+TIME: 1705148829
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69067ms
+rtt min/avg/max/mdev = 9.978/14.380/27.577/1.716 ms, pipe 2, ipg/ewma 13.816/14.177 ms
+Ping: 31.105 ms
+Download: 385.43 Mbit/s
+Upload: 24.82 Mbit/s
+
+TIME: 1705149519
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68505ms
+rtt min/avg/max/mdev = 8.369/14.084/25.533/1.226 ms, pipe 2, ipg/ewma 13.703/14.656 ms
+Ping: 29.44 ms
+Download: 568.48 Mbit/s
+Upload: 15.03 Mbit/s
+
+TIME: 1705150212
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68228ms
+rtt min/avg/max/mdev = 9.859/14.313/27.164/1.759 ms, pipe 3, ipg/ewma 13.648/13.608 ms
+Ping: 28.535 ms
+Download: 18.16 Mbit/s
+Upload: 15.18 Mbit/s
+
+TIME: 1705150909
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67501ms
+rtt min/avg/max/mdev = 10.465/13.906/33.879/1.068 ms, pipe 3, ipg/ewma 13.502/14.156 ms
+Ping: 33.863 ms
+Download: 245.91 Mbit/s
+Upload: 14.58 Mbit/s
+
+TIME: 1705151608
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70013ms
+rtt min/avg/max/mdev = 11.640/14.219/25.983/0.925 ms, pipe 2, ipg/ewma 14.005/14.082 ms
+Ping: 29.361 ms
+Download: 538.28 Mbit/s
+Upload: 24.74 Mbit/s
+
+TIME: 1705152297
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70281ms
+rtt min/avg/max/mdev = 11.806/14.227/24.780/0.929 ms, pipe 2, ipg/ewma 14.059/14.569 ms
+Ping: 33.217 ms
+Download: 369.03 Mbit/s
+Upload: 24.83 Mbit/s
+
+TIME: 1705152989
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70211ms
+rtt min/avg/max/mdev = 11.831/14.210/30.158/0.943 ms, pipe 3, ipg/ewma 14.044/14.014 ms
+Ping: 30.796 ms
+Download: 520.73 Mbit/s
+Upload: 24.58 Mbit/s
+
+TIME: 1705153678
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68725ms
+rtt min/avg/max/mdev = 11.011/14.304/26.186/1.535 ms, pipe 2, ipg/ewma 13.747/13.777 ms
+Ping: 30.11 ms
+Download: 526.89 Mbit/s
+Upload: 23.60 Mbit/s
+
+TIME: 1705154366
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68420ms
+rtt min/avg/max/mdev = 9.070/14.123/25.786/1.150 ms, pipe 2, ipg/ewma 13.686/14.034 ms
+Ping: 28.094 ms
+Download: 504.02 Mbit/s
+Upload: 24.34 Mbit/s
+
+TIME: 1705155053
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 4999 received, 0.02% packet loss, time 68335ms
+rtt min/avg/max/mdev = 9.711/14.118/29.889/1.104 ms, pipe 2, ipg/ewma 13.669/14.122 ms
+Ping: 30.13 ms
+Download: 583.98 Mbit/s
+Upload: 3.47 Mbit/s
+
+TIME: 1705155741
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67662ms
+rtt min/avg/max/mdev = 8.409/13.940/25.652/0.955 ms, pipe 2, ipg/ewma 13.535/13.885 ms
+Ping: 30.517 ms
+Download: 146.05 Mbit/s
+Upload: 24.08 Mbit/s
+
+TIME: 1705156432
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70131ms
+rtt min/avg/max/mdev = 11.719/14.189/24.066/0.910 ms, pipe 2, ipg/ewma 14.028/14.133 ms
+Ping: 28.473 ms
+Download: 8.72 Mbit/s
+Upload: 4.33 Mbit/s
+
+TIME: 1705157126
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70332ms
+rtt min/avg/max/mdev = 9.574/14.458/25.738/1.426 ms, pipe 2, ipg/ewma 14.069/13.892 ms
+Ping: 31.215 ms
+Download: 24.41 Mbit/s
+Upload: 24.75 Mbit/s
+
+TIME: 1705157819
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69875ms
+rtt min/avg/max/mdev = 11.138/14.224/30.220/1.068 ms, pipe 2, ipg/ewma 13.977/14.004 ms
+Ping: 30.552 ms
+Download: 46.12 Mbit/s
+Upload: 24.88 Mbit/s
+
+TIME: 1705158512
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 67916ms
+rtt min/avg/max/mdev = 11.794/14.010/31.720/1.018 ms, pipe 2, ipg/ewma 13.585/13.989 ms
+Ping: 30.169 ms
+Download: 11.22 Mbit/s
+Upload: 12.70 Mbit/s
+
+TIME: 1705159212
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 68555ms
+rtt min/avg/max/mdev = 9.668/14.119/26.075/1.075 ms, pipe 2, ipg/ewma 13.713/13.838 ms
+Ping: 30.654 ms
+Download: 21.56 Mbit/s
+Upload: 12.19 Mbit/s
+
+TIME: 1705159910
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69884ms
+rtt min/avg/max/mdev = 10.280/14.237/24.296/1.009 ms, pipe 2, ipg/ewma 13.979/14.574 ms
+Ping: 27.547 ms
+Download: 462.82 Mbit/s
+Upload: 23.58 Mbit/s
+
+TIME: 1705160600
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 69681ms
+rtt min/avg/max/mdev = 9.521/14.290/33.565/1.123 ms, pipe 3, ipg/ewma 13.939/14.623 ms
+Ping: 28.738 ms
+Download: 36.67 Mbit/s
+Upload: 24.35 Mbit/s
+
+TIME: 1705161292
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5000 packets transmitted, 5000 received, 0% packet loss, time 70043ms
+rtt min/avg/max/mdev = 9.803/14.571/28.235/1.665 ms, pipe 2, ipg/ewma 14.011/13.964 ms
+Ping: 28.034 ms
+Download: 21.68 Mbit/s
+Upload: 13.68 Mbit/s

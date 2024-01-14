@@ -1,3 +1,8 @@
+# Unnecessary R folders
+/HomeNetworkAnalysis/Visualizations
+/HomeNetworkAnalysis/Test Data
+/.Rproj.user
+
 # Logs
 logs
 *.log
