@@ -1,6 +1,6 @@
 # Unnecessary R folders
 /HomeNetworkAnalysis/Visualizations
-/HomeNetworkAnalysis/Test Data
+/HomeNetworkAnalysis/TestData
 /.Rproj.user
 /HomeNetworkAnalysis/GitTokenAccess.txt
 
