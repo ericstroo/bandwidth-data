@@ -1,4 +1,5 @@
 #Work file for exploring data and testing functions
+#TESTING SSH
 
 library(tidyverse)
 library(gridExtra)
@@ -14,7 +15,7 @@ directory <- "./Data/"
 log_data <- process_logs(directory)
 str(log_data)
 
-#visualize a daily overview
+#visualize a daily overvieW
 dailyISP = "COMCAST"
 start = "2024-1-11"
 end = "2024-01-15"
