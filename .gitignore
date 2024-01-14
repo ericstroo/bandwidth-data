@@ -1,3 +1,9 @@
+# Unnecessary R folders
+/HomeNetworkAnalysis/Visualizations
+/HomeNetworkAnalysis/TestData
+/.Rproj.user
+/HomeNetworkAnalysis/GitTokenAccess.txt
+
 # Logs
 logs
 *.log
