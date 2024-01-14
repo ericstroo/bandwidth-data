@@ -14,6 +14,7 @@ parse_log_file <- function(file_path) {
   lines <- readLines(file_path)
   
   # Extract header information
+  #NEXT REV: loop through these so they don't have to be in order
   ref <- str_extract(lines[1], "(?<=REF: ).*")
   isp <- str_extract(lines[2], "(?<=ISP: ).*")
   lan_hardware <- str_extract(lines[3], "(?<=LAN_HARDWARE: ).*")
@@ -33,7 +34,8 @@ parse_log_file <- function(file_path) {
   rtt_mdev <- numeric()
   download <- numeric()
   upload <- numeric()
-  parse_complete = TRUE
+  parse_complete = TRUE #NEXT REV: Replace parse_complete with a vector of logicals to track if each test is complete
+
   
   # Iterate over the lines and extract data
   for (i in seq_along(lines)) {
