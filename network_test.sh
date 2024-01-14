@@ -24,14 +24,12 @@ while [ $SECONDS -lt $end ]; do
 		printf '\n\nTEST: PING\nTIME: ' >> $DATA_FOLDER/$FILE_NAME.txt
 		date +%s >> $DATA_FOLDER/$FILE_NAME.txt
 		printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   testing ping...."
-		ping -q -f -c 1000 $DESTINATION >> $DATA_FOLDER/$FILE_NAME.txt
-		printf "${GREEN}ping complete${NC}\n"
+		ping -q -f -c 1000 $DESTINATION >> $DATA_FOLDER/$FILE_NAME.txt && printf "${GREEN}ping complete${NC}\n"
 		sleep 5
 	done
 	echo -e '\n\nTEST: BANDWIDTH' >> $DATA_FOLDER/$FILE_NAME.txt
 	printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   testing upload and download...."
-	speedtest-cli --simple >> $DATA_FOLDER/$FILE_NAME.txt
-	printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   ${GREEN}speedtest complete${NC}\n"
+	speedtest-cli --simple >> $DATA_FOLDER/$FILE_NAME.txt && printf "${GREEN}speedtest complete${NC}\n"
 done
 echo -e "\n${GREEN}results saved to $DATA_FOLDER$FILE_NAME.txt"
 chmod a+w $DATA_FOLDER$FILE_NAME.txt
