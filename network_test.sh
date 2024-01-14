@@ -1,8 +1,13 @@
 #!/bin/bash
 
 DATA_FOLDER="./HomeNetworkAnalysis/Data/"
-FILE_NAME=$(date '+%Y-%m-%d')_$1
-end=$((SECONDS+10))
+
+
+TIME=$1*3600 #Time in hours
+FILE_NAME=$(date '+%Y-%m-%d')_$2
+DESTINATION=$3 #1.1.1.1, 8.8.8.8, or another IP
+
+end=$((SECONDS+TIME))
 GREEN='\033[0;32m'
 OR='\033[0;33m'
 DATECOL='\033[0;34m'
@@ -15,11 +20,11 @@ if [ -f "$DATA_FOLDER$FILE_NAME.txt" ]; then
     chmod a-w $DATA_FOLDER$FILE_NAME.txt
 fi
 while [ $SECONDS -lt $end ]; do
-	for i in $(seq 1 2); do
+	for i in $(seq 1 20); do
 		printf '\n\nTEST: PING\nTIME: ' >> $DATA_FOLDER/$FILE_NAME.txt
 		date +%s >> $DATA_FOLDER/$FILE_NAME.txt
 		printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   testing ping...."
-		ping -q -f -c 10 1.1.1.1 >> $DATA_FOLDER/$FILE_NAME.txt
+		ping -q -f -c 1000 $DESTINATION >> $DATA_FOLDER/$FILE_NAME.txt
 		printf "${GREEN}ping complete${NC}\n"
 		printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   ${OR}paused${NC}\n"
 		sleep 5
