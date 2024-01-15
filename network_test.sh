@@ -25,7 +25,7 @@ while [ $SECONDS -lt $end ]; do
 		date +%s >> $DATA_FOLDER/$FILE_NAME.txt
 		printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   testing ping...."
 		ping -q -f -c 1000 $DESTINATION >> $DATA_FOLDER/$FILE_NAME.txt && printf "${GREEN}ping complete${NC}\n"
-		sleep 5
+		sleep 17
 	done
 	echo -e '\n\nTEST: BANDWIDTH' >> $DATA_FOLDER/$FILE_NAME.txt
 	printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   testing upload and download...."
