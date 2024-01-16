@@ -2,12 +2,19 @@
 library(grid)
 library(gridExtra)
 
+
+# This function creates a daily overview of Bandwidth, RTT, and packet loss data for a given ISP
 visualization_daily_network <- function(log_data, plot_title) {
-  time_range <- range(log_data$time_data)
-  # Plotting rtt_avg over time with red error bars, dots for rtt_avg, and red X for specific condition
   
-ping_data = log_data %>%
-  filter(!is.na(packets_transmitted))
+  
+  time_range <- range(log_data$time_data)
+
+  # Plot rtt_avg over time with jitter (rtt_mdev) error barsm abd secondary axis for packet loss bar plots
+  # Includes and red diamonds for jitter or bandwidth drop events
+  
+  # Filter out any rows where packets weren't transmitted which signals a data collection error
+  ping_data = log_data %>%
+    filter(!is.na(packets_transmitted))
 
   plot_rtt <- ping_data %>%
     ggplot(aes(x = time_data)) +
@@ -38,9 +45,10 @@ ping_data = log_data %>%
           axis.title = element_text(size = 10),
           plot.title = element_text(size = 10))
   
-
-bandwidth_data <- log_data %>% filter(!is.na(upload)) %>% filter(!is.na(download))
-plot_bandwidth <- bandwidth_data %>%
+  # Plot bandwidth over time. Remove NA upload/download results to avoid printing errors
+  bandwidth_data <- log_data %>% filter(!is.na(upload)) %>% filter(!is.na(download))
+  
+  plot_bandwidth <- bandwidth_data %>%
     ggplot(aes(x = time_data)) +
     geom_point(aes(y = upload, color = "Upload"), size = 2) +
     geom_point(aes(y = download, color = "Download"), size = 2) +
@@ -68,7 +76,8 @@ plot_bandwidth <- bandwidth_data %>%
           legend.text = element_text(size = 8),
           legend.title = element_text(size = 8),
           plot.margin=unit(c(20,35,20,15),"pt"))
-  # Combine the plots
+  
+  # Combine the plots and add title
   grid.arrange(plot_bandwidth,
                plot_rtt,
                ncol = 1,
@@ -79,8 +88,7 @@ plot_bandwidth <- bandwidth_data %>%
                               hjust=0,
                               vjust=1))
 }
-?textGrob
-?gpar
+
 #boxplot ISP comparison function
 visualization_boxplot <- function(log_data, factor, variable, tit="", xlabel="") {
   #create a boxplot comparing rtt_avg for TMOBILE data and COMCAST data

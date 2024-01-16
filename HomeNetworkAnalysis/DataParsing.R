@@ -1,108 +1,12 @@
 #Functions for parsing txt files, assembling into dataframe, and data cleaning
 
-# Load necessary library
+# Load necessary libraries
 library(tidyverse)
 library(gridExtra)
 library(readr)
-#install.packages("ggpubr")
-
-#crawl log file with grep() and assemble into dataframe
-#NOTE works with data created in initial log file format in early experiments.
-# This Will need to be modified to work with data produced by networkTest.sh script
-parse_log_file <- function(file_path) {
-  # Function to parse the log file
-  getwd()
-  lines <- readLines(file_path)
-  
-  # Extract header information
-  #NEXT REV: loop through these so they don't have to be in order
-  ref <- str_extract(lines[1], "(?<=REF: ).*")
-  isp <- str_extract(lines[2], "(?<=ISP: ).*")
-  lan_hardware <- str_extract(lines[3], "(?<=LAN_HARDWARE: ).*")
-  modem <- str_extract(lines[4], "(?<=MODEM: ).*")
-  mtu <- as.numeric(str_extract(lines[5], "(?<=MTU: ).*"))
-  temp_low <- as.numeric(str_extract(lines[6], "(?<=TEMP_LOW: ).*"))
-  temp_high <- as.numeric(str_extract(lines[7], "(?<=TEMP_HIGH: ).*"))
-  
-  # Initialize empty vectors to store the data
-  time_data <- numeric()
-  packets_transmitted <- numeric()
-  packets_received <- numeric()
-  packet_loss <- numeric()
-  rtt_min <- numeric()
-  rtt_avg <- numeric()
-  rtt_max <- numeric()
-  rtt_mdev <- numeric()
-  download <- numeric()
-  upload <- numeric()
-  parse_complete = TRUE #NEXT REV: Replace parse_complete with a vector of logicals to track if each test is complete
-
-  
-  # Iterate over the lines and extract data
-  for (i in seq_along(lines)) {
-    if (grepl("TIME:", lines[i])) {
-      if (parse_complete == TRUE){
-        parse_complete = FALSE
-      }
-      else {
-        # in some instances, received a 403 FORBIDDEN error with speedtest.net
-        # this logic makes sure to add NA to upload and download before starting the next line of data
-        download <- c(download, NA) 
-        upload <- c(upload, NA)
-      }
-      
-      time_data <- c(time_data, as.numeric(str_extract(lines[i], "\\d+")))
-      
-    }
-    if (grepl("packets transmitted", lines[i])) {
-      transmitted_received <- str_extract_all(lines[i], "\\d+")[[1]]
-      packets_transmitted <- c(packets_transmitted, as.numeric(transmitted_received[1]))
-      packets_received <- c(packets_received, as.numeric(transmitted_received[2]))
-      packet_loss <- c(packet_loss, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
-    }
-    if (grepl("rtt min/avg/max/mdev", lines[i])) {
-      rtt_values <- str_extract_all(lines[i], "\\d+\\.\\d+")[[1]]
-      rtt_min <- c(rtt_min, as.numeric(rtt_values[1]))
-      rtt_avg <- c(rtt_avg, as.numeric(rtt_values[2]))
-      rtt_max <- c(rtt_max, as.numeric(rtt_values[3]))
-      rtt_mdev <- c(rtt_mdev, as.numeric(rtt_values[4]))
-    }
-    if (grepl("Download:", lines[i])) {
-      download <- c(download, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
-    }
-    if (grepl("Upload:", lines[i])) {
-      upload <- c(upload, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
-      parse_complete = TRUE
-    }
-  }
-  
-
-  # Create a dataframe
-  data <- data.frame(
-    ref = ref %>% as.character() %>% rep(length(time_data)),
-    isp = isp %>% as.factor() %>% rep(length(time_data)),
-    lan_hardware = lan_hardware %>% as.factor() %>% rep(length(time_data)),
-    modem = modem %>% as.factor() %>% rep(length(time_data)),
-    mtu = mtu %>% as.integer() %>% rep(length(time_data)),
-    temp_low = temp_low %>% as.integer() %>% rep(length(time_data)),
-    temp_high = temp_high %>% as.integer() %>% rep(length(time_data)),
-    time_data = as.POSIXct(time_data, origin="1970-01-01", tz="America/Los_Angeles"),
-    packets_transmitted = packets_transmitted %>% as.integer(),
-    packets_received = packets_received %>% as.integer(),
-    packet_loss = packet_loss %>% replace(is.na(.), 0),
-    rtt_min,
-    rtt_avg,
-    rtt_max,
-    rtt_mdev,
-    download,
-    upload
-  )
-
-  return(data)
-  
-}
-
 library(stringr)
+
+
 
 parse_log_file2 <- function(file_path) {
   lines <- readLines(file_path)
@@ -127,9 +31,9 @@ parse_log_file2 <- function(file_path) {
   download <- numeric()
   upload <- numeric()
   
+  # Initialize control variables
   expected_step = ""
   ping_steps = c("TIME", "PACKETS", "RTT", "BANDWIDTH_CHECK")
-  data_count = 0
   exceptions = c("bytes of data",
                  "ping statistics ---",
                  "Ping:",
@@ -138,19 +42,30 @@ parse_log_file2 <- function(file_path) {
   
   # Iterate over the lines and extract data
   for (i in seq_along(lines)) {
+    
     #Scan for new tests
     if(grepl("TEST: PING", lines[i])) {
+      
+      # If expecting a bandwidth test, but encounter a PING test, log NA for bandwidth test
+      # Once completing loging a ping test, log NA for a bandwidth test prior to logging next Ping test
       if(expected_step == "BANDWIDTH_CHECK"){
         download <- c(download, NA)
         upload <- c(upload, NA)
       }
       
+      #Adjust expected step to TIME
       expected_step <- ping_steps[1]
       next
     }
+    
+    #If a Speedtest is encountered, log Speedtest results
     else if(grepl("TEST: BANDWIDTH", lines[i])){
+      
       expected_step <- ""
       
+      # If the data exists, log it. Otherwise log NA.
+      # There are cases where speedtest will write "TEST: BANDWIDTH" and then fail.
+      # These events must be logged as NA to maintain 1:1 alignment with other data vectors
       if(grepl("Download:", lines[i+2])){
         download <- c(download, as.numeric(str_extract(lines[i+2], "\\d+")))
         upload <- c(upload, as.numeric(str_extract(lines[i+3], "\\d+")))
@@ -161,8 +76,7 @@ parse_log_file2 <- function(file_path) {
       }
       next
     }
-    
-    #Execute PING test collection
+    #Execute Ping Test data parsing when expected step is within Ping test bounds
     switch(expected_step,
            "TIME" = {
              if(grepl("TIME:", lines[i])) {
@@ -222,8 +136,11 @@ parse_log_file2 <- function(file_path) {
            
     )
   }
-  #Add NA to upload and download if its shorter than the other vectors
-  #This only occurs when the test is interrupted or ends without a final speedtest.
+  
+  
+  # Add NA to upload and download if its shorter than the other vectors
+  # This only occurs when the test is interrupted or ends without a final speedtest.
+  # Add NA to RTT variables. This occurs if final test ended with 100% packet loss.
   
   data_length = max(c(length(time_data),
                       length(packets_transmitted),
@@ -267,6 +184,8 @@ if(length(rtt_avg) < data_length){
     upload
   )
   
+  # Set ISP, LAN_HARDWARE, and MODEM to all caps + refactor.
+  # Messy code, but unable to do this at the vector level in R.
   data$isp <- toupper(data$isp) %>% as.factor()
   data$lan_hardware <- toupper(data$lan_hardware) %>% as.factor()
   data$modem <- toupper(data$modem) %>% as.factor()
@@ -294,3 +213,100 @@ process_logs <- function(directory){
   return(assembledDataframe)
 }
 
+
+# crawl log file with grep() and assemble into dataframe
+# ARCHIVE: works with data created in initial log file format in early experiments.
+# Keep for comparison with each ISPs data on older networking equipment prior to upgrade
+
+parse_log_file <- function(file_path) {
+  # Function to parse the log file
+  getwd()
+  lines <- readLines(file_path)
+  
+  # Extract header information
+  #NEXT REV: loop through these so they don't have to be in order
+  ref <- str_extract(lines[1], "(?<=REF: ).*")
+  isp <- str_extract(lines[2], "(?<=ISP: ).*")
+  lan_hardware <- str_extract(lines[3], "(?<=LAN_HARDWARE: ).*")
+  modem <- str_extract(lines[4], "(?<=MODEM: ).*")
+  mtu <- as.numeric(str_extract(lines[5], "(?<=MTU: ).*"))
+  temp_low <- as.numeric(str_extract(lines[6], "(?<=TEMP_LOW: ).*"))
+  temp_high <- as.numeric(str_extract(lines[7], "(?<=TEMP_HIGH: ).*"))
+  
+  # Initialize empty vectors to store the data
+  time_data <- numeric()
+  packets_transmitted <- numeric()
+  packets_received <- numeric()
+  packet_loss <- numeric()
+  rtt_min <- numeric()
+  rtt_avg <- numeric()
+  rtt_max <- numeric()
+  rtt_mdev <- numeric()
+  download <- numeric()
+  upload <- numeric()
+  parse_complete = TRUE #NEXT REV: Replace parse_complete with a vector of logicals to track if each test is complete
+  
+  
+  # Iterate over the lines and extract data
+  for (i in seq_along(lines)) {
+    if (grepl("TIME:", lines[i])) {
+      if (parse_complete == TRUE){
+        parse_complete = FALSE
+      }
+      else {
+        # in some instances, received a 403 FORBIDDEN error with speedtest.net
+        # this logic makes sure to add NA to upload and download before starting the next line of data
+        download <- c(download, NA) 
+        upload <- c(upload, NA)
+      }
+      
+      time_data <- c(time_data, as.numeric(str_extract(lines[i], "\\d+")))
+      
+    }
+    if (grepl("packets transmitted", lines[i])) {
+      transmitted_received <- str_extract_all(lines[i], "\\d+")[[1]]
+      packets_transmitted <- c(packets_transmitted, as.numeric(transmitted_received[1]))
+      packets_received <- c(packets_received, as.numeric(transmitted_received[2]))
+      packet_loss <- c(packet_loss, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
+    }
+    if (grepl("rtt min/avg/max/mdev", lines[i])) {
+      rtt_values <- str_extract_all(lines[i], "\\d+\\.\\d+")[[1]]
+      rtt_min <- c(rtt_min, as.numeric(rtt_values[1]))
+      rtt_avg <- c(rtt_avg, as.numeric(rtt_values[2]))
+      rtt_max <- c(rtt_max, as.numeric(rtt_values[3]))
+      rtt_mdev <- c(rtt_mdev, as.numeric(rtt_values[4]))
+    }
+    if (grepl("Download:", lines[i])) {
+      download <- c(download, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
+    }
+    if (grepl("Upload:", lines[i])) {
+      upload <- c(upload, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
+      parse_complete = TRUE
+    }
+  }
+  
+  
+  # Create a dataframe
+  data <- data.frame(
+    ref = ref %>% as.character() %>% rep(length(time_data)),
+    isp = isp %>% as.factor() %>% rep(length(time_data)),
+    lan_hardware = lan_hardware %>% as.factor() %>% rep(length(time_data)),
+    modem = modem %>% as.factor() %>% rep(length(time_data)),
+    mtu = mtu %>% as.integer() %>% rep(length(time_data)),
+    temp_low = temp_low %>% as.integer() %>% rep(length(time_data)),
+    temp_high = temp_high %>% as.integer() %>% rep(length(time_data)),
+    time_data = as.POSIXct(time_data, origin="1970-01-01", tz="America/Los_Angeles"),
+    packets_transmitted = packets_transmitted %>% as.integer(),
+    packets_received = packets_received %>% as.integer(),
+    packet_loss = packet_loss %>% replace(is.na(.), 0),
+    rtt_min,
+    rtt_avg,
+    rtt_max,
+    rtt_mdev,
+    download,
+    upload
+  )
+  
+  return(data)
+  
+}

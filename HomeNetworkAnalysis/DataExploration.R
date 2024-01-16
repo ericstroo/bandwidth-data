@@ -2,8 +2,6 @@
 
 #import libraries
 library(tidyverse)
-library(gridExtra)
-library(readr)
 
 #update working directory and import functions
 #setwd("./HomeNetworkAnalysis/")
@@ -13,8 +11,6 @@ data_directory <- "./Data/"
 
 #extracts log data from directory. 
 log_data <- process_logs(data_directory)
-str(log_data)
-levels(log_data$isp)
 
 #visualize a daily overview
 dailyISP = "Comcast"
@@ -23,9 +19,7 @@ end = "2024-01-16"
 starttime = "00:00:00"
 endtime = "23:59:59"
 
-source("DataVisualization.R")
 log_data %>%
-  #filter(between(time_data, as.Date(start), as.Date(end))) %>%
   filter(between(time_data, as.POSIXct(paste(start, starttime)), as.POSIXct(paste(end, endtime)))) %>%
   filter(isp == toupper(dailyISP)) %>%
   visualization_daily_network(plot_title = paste(dailyISP, ": ", start, " to ", end, sep=""))
