@@ -1,38 +1,52 @@
-#Common vizualizations for network analysis
+#Common visualizations for network analysis
+library(grid)
+library(gridExtra)
 
-visualization_daily_network <- function(log_data) {
+visualization_daily_network <- function(log_data, plot_title) {
   time_range <- range(log_data$time_data)
   # Plotting rtt_avg over time with red error bars, dots for rtt_avg, and red X for specific condition
-  plot_rtt <- log_data %>%
+  
+ping_data = log_data %>%
+  filter(!is.na(packets_transmitted))
+
+  plot_rtt <- ping_data %>%
     ggplot(aes(x = time_data)) +
     geom_errorbar(aes(y = rtt_avg, ymin = rtt_avg - rtt_mdev, ymax = rtt_avg + rtt_mdev), 
-                  width = 200, linewidth = 0.5, color = "orange", alpha = .5) +
-    geom_point(aes(y = rtt_avg), data = log_data %>% filter(rtt_mdev <= 30)) +
-    geom_point(aes(y = rtt_avg), data = log_data %>% filter(rtt_mdev > 30),
+                  width = .5, linewidth = 0.5, color = "orange", alpha = .2) +
+    geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev <= 30),
+               size = .5, color="orange") +
+    geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev > 30),
                shape = 5, color = "red", size = 3) +  # Red X for specific condition
-    geom_col(aes(y = packet_loss, group = 1), position = position_dodge(width = 0.1), color = NA, fill = "red", alpha = 0.3) +  # Bar chart layer
+    geom_col(width = 30,
+             aes(y = packet_loss, group = 1), 
+             position = position_dodge("dodge2"), 
+             color = NA, fill = "red", alpha = 0.5) +  # Bar chart layer
     scale_y_continuous(
       "Ping (ms)", 
       limits = c(0, 100),
-      sec.axis = sec_axis(~ . * 1, name = "Packet Loss")  # Secondary axis (adjust the transformation as needed)
+      sec.axis = sec_axis(~ . * .2, name = "Packet Loss (%)")  # Secondary axis (adjust the transformation as needed)
     ) +
     scale_x_datetime(limits = time_range, 
                      date_breaks = "1 hour",
                      date_labels = "%H:%M %p") +
-    labs(title = "Ping Over Time with Bar Chart Overlay") +
-    theme_minimal()
-    #theme(axis.text.y.right = element_text(color = "red", alpha = 0.1))  # Style for the secondary axis
+    labs(title = "RTT and Packet Loss Over Time",
+         x = "Time",
+         y = "Ping (ms)") +
+    theme_minimal() +
+    theme(plot.margin=unit(c(20,10,20,20),"pt"),
+          axis.text = element_text(size = 8),
+          axis.title = element_text(size = 10),
+          plot.title = element_text(size = 10))
   
-  
-  
-  
-  plot_bandwidth <- log_data %>%
+
+bandwidth_data <- log_data %>% filter(!is.na(upload)) %>% filter(!is.na(download))
+plot_bandwidth <- bandwidth_data %>%
     ggplot(aes(x = time_data)) +
-    geom_line(aes(y = upload, color = "Upload")) +
-    geom_line(aes(y = download, color = "Download")) +
-    geom_point(data = log_data %>% filter(download < 10),
+    geom_point(aes(y = upload, color = "Upload"), size = 2) +
+    geom_point(aes(y = download, color = "Download"), size = 2) +
+    geom_point(data = bandwidth_data %>% filter(download < 10),
                aes(y = download),  # Specify the y aesthetic
-               shape = 5, color = "red", size = 3) +  # Changed color to red for visibility
+               shape = 5, color = "red", size = 3) +  # Red dots for downloads < 10
     scale_color_manual(values = c("Upload" = "purple", "Download" = "cyan")) +
     scale_x_datetime(limits = time_range, 
                      date_breaks = "1 hour",
@@ -47,14 +61,26 @@ visualization_daily_network <- function(log_data) {
           legend.direction="horizontal",
           legend.justification=c(1, 0), 
           legend.key.width=unit(1, "lines"), 
-          legend.key.height=unit(1, "lines"))
-  
-
-  
+          legend.key.height=unit(1, "lines"),
+          axis.text = element_text(size = 8),
+          axis.title = element_text(size = 10),
+          plot.title = element_text(size = 10),
+          legend.text = element_text(size = 8),
+          legend.title = element_text(size = 8),
+          plot.margin=unit(c(20,35,20,15),"pt"))
   # Combine the plots
-  grid.arrange(plot_bandwidth, plot_rtt, ncol = 1)
+  grid.arrange(plot_bandwidth,
+               plot_rtt,
+               ncol = 1,
+               top = textGrob(plot_title,
+                              x=unit(20, "pt"),
+                              y=unit(5, "pt"),
+                              just="left",
+                              hjust=0,
+                              vjust=1))
 }
-
+?textGrob
+?gpar
 #boxplot ISP comparison function
 visualization_boxplot <- function(log_data, factor, variable, tit="", xlabel="") {
   #create a boxplot comparing rtt_avg for TMOBILE data and COMCAST data

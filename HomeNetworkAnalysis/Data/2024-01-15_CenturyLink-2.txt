@@ -1,0 +1,451 @@
+REF: 02
+ISP: CENTURYLINK
+LAN_HARDWARE: OMADA
+DESTINATION: 8.8.8.8
+MODEM: ISP_GATEWAY
+MTU: 1500
+TEMP_LOW: 28
+TEMP_HIGH: 32
+
+TEST: PING
+TIME: 1705380768
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 360 received, 10% packet loss, time 40401ms
+rtt min/avg/max/mdev = 5.669/7.518/11.008/0.609 ms
+
+
+TEST: PING
+TIME: 1705380829
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 380 received, 5% packet loss, time 40365ms
+rtt min/avg/max/mdev = 5.733/7.457/12.547/0.688 ms
+
+
+TEST: PING
+TIME: 1705380889
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 394 received, 1.5% packet loss, time 40344ms
+rtt min/avg/max/mdev = 6.041/7.614/13.832/0.705 ms
+
+
+TEST: PING
+TIME: 1705380950
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 391 received, 2.25% packet loss, time 40336ms
+rtt min/avg/max/mdev = 5.559/7.494/10.639/0.588 ms
+
+
+TEST: PING
+TIME: 1705381010
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 371 received, 7.25% packet loss, time 40370ms
+rtt min/avg/max/mdev = 5.650/7.483/12.817/0.721 ms
+
+
+TEST: PING
+TIME: 1705381070
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 368 received, 8% packet loss, time 40347ms
+rtt min/avg/max/mdev = 5.358/7.384/12.468/0.632 ms
+
+
+TEST: PING
+TIME: 1705381131
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 357 received, 10.75% packet loss, time 40396ms
+rtt min/avg/max/mdev = 5.472/7.395/11.428/0.631 ms
+
+
+TEST: PING
+TIME: 1705381191
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 390 received, 2.5% packet loss, time 40320ms
+rtt min/avg/max/mdev = 5.456/7.595/16.062/0.811 ms
+
+
+TEST: PING
+TIME: 1705381252
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 391 received, 2.25% packet loss, time 40318ms
+rtt min/avg/max/mdev = 6.066/7.470/9.746/0.497 ms
+
+
+TEST: PING
+TIME: 1705381312
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 393 received, 1.75% packet loss, time 40304ms
+rtt min/avg/max/mdev = 6.150/7.492/11.898/0.610 ms
+
+
+TEST: PING
+TIME: 1705381373
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 295 received, 26.25% packet loss, time 40550ms
+rtt min/avg/max/mdev = 5.804/7.439/12.511/0.709 ms
+
+
+TEST: PING
+TIME: 1705381433
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 181 received, 54.75% packet loss, time 40939ms
+rtt min/avg/max/mdev = 5.338/7.343/9.992/0.620 ms
+
+
+TEST: PING
+TIME: 1705381494
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 379 received, 5.25% packet loss, time 40363ms
+rtt min/avg/max/mdev = 5.940/7.497/12.303/0.590 ms
+
+
+TEST: PING
+TIME: 1705381555
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 395 received, 1.25% packet loss, time 40318ms
+rtt min/avg/max/mdev = 6.186/7.524/12.298/0.613 ms
+
+
+TEST: PING
+TIME: 1705381615
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 396 received, 1% packet loss, time 40316ms
+rtt min/avg/max/mdev = 5.901/7.553/13.071/0.648 ms
+
+
+TEST: PING
+TIME: 1705381676
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 377 received, 5.75% packet loss, time 40372ms
+rtt min/avg/max/mdev = 6.138/7.422/14.923/0.791 ms
+
+
+TEST: PING
+TIME: 1705381736
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 386 received, 3.5% packet loss, time 40317ms
+rtt min/avg/max/mdev = 6.006/7.511/9.020/0.521 ms
+
+
+TEST: PING
+TIME: 1705381797
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 391 received, 2.25% packet loss, time 40318ms
+rtt min/avg/max/mdev = 6.255/7.493/11.380/0.569 ms
+
+
+TEST: PING
+TIME: 1705381857
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 390 received, 2.5% packet loss, time 40316ms
+rtt min/avg/max/mdev = 5.973/7.505/11.147/0.570 ms
+
+
+TEST: PING
+TIME: 1705381917
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 398 received, 0.5% packet loss, time 40309ms
+rtt min/avg/max/mdev = 5.841/7.529/10.042/0.563 ms
+
+
+TEST: BANDWIDTH
+Ping: 104.456 ms
+Download: 0.51 Mbit/s
+Upload: 287.68 Mbit/s
+
+
+TEST: PING
+TIME: 1705382009
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 390 received, 2.5% packet loss, time 40307ms
+rtt min/avg/max/mdev = 6.037/7.460/9.336/0.500 ms
+
+
+TEST: PING
+TIME: 1705382069
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 389 received, 2.75% packet loss, time 40323ms
+rtt min/avg/max/mdev = 5.583/7.535/17.948/0.779 ms
+
+
+TEST: PING
+TIME: 1705382130
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 393 received, 1.75% packet loss, time 40304ms
+rtt min/avg/max/mdev = 5.797/7.414/11.379/0.562 ms
+
+
+TEST: PING
+TIME: 1705382190
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 393 received, 1.75% packet loss, time 40316ms
+rtt min/avg/max/mdev = 5.956/7.504/9.233/0.516 ms
+
+
+TEST: PING
+TIME: 1705382250
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 397 received, 0.75% packet loss, time 40311ms
+rtt min/avg/max/mdev = 6.119/7.523/11.573/0.619 ms
+
+
+TEST: PING
+TIME: 1705382311
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 394 received, 1.5% packet loss, time 40313ms
+rtt min/avg/max/mdev = 6.000/7.614/12.983/0.655 ms
+
+
+TEST: PING
+TIME: 1705382371
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 384 received, 4% packet loss, time 40330ms
+rtt min/avg/max/mdev = 5.381/7.548/12.012/0.702 ms
+
+
+TEST: PING
+TIME: 1705382432
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 396 received, 1% packet loss, time 40308ms
+rtt min/avg/max/mdev = 6.210/7.511/13.154/0.654 ms
+
+
+TEST: PING
+TIME: 1705382492
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 372 received, 7% packet loss, time 40366ms
+rtt min/avg/max/mdev = 6.056/7.587/10.930/0.573 ms
+
+
+TEST: PING
+TIME: 1705382553
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 390 received, 2.5% packet loss, time 40332ms
+rtt min/avg/max/mdev = 5.846/7.548/13.255/0.687 ms
+
+
+TEST: PING
+TIME: 1705382613
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 394 received, 1.5% packet loss, time 40311ms
+rtt min/avg/max/mdev = 6.208/7.571/10.432/0.569 ms
+
+
+TEST: PING
+TIME: 1705382673
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 397 received, 0.75% packet loss, time 40307ms
+rtt min/avg/max/mdev = 5.856/7.521/14.888/0.658 ms
+
+
+TEST: PING
+TIME: 1705382734
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 366 received, 8.5% packet loss, time 40394ms
+rtt min/avg/max/mdev = 5.446/7.431/9.483/0.557 ms
+
+
+TEST: PING
+TIME: 1705382794
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 362 received, 9.5% packet loss, time 40368ms
+rtt min/avg/max/mdev = 5.942/7.542/11.135/0.631 ms
+
+
+TEST: PING
+TIME: 1705382855
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 376 received, 6% packet loss, time 40352ms
+rtt min/avg/max/mdev = 5.972/7.505/12.225/0.594 ms
+
+
+TEST: PING
+TIME: 1705382915
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 396 received, 1% packet loss, time 40308ms
+rtt min/avg/max/mdev = 5.866/7.512/12.368/0.624 ms
+
+
+TEST: PING
+TIME: 1705382976
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 391 received, 2.25% packet loss, time 40332ms
+rtt min/avg/max/mdev = 6.246/7.661/11.164/0.599 ms
+
+
+TEST: PING
+TIME: 1705383036
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 388 received, 3% packet loss, time 40339ms
+rtt min/avg/max/mdev = 5.358/7.557/11.505/0.653 ms
+
+
+TEST: PING
+TIME: 1705383097
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 393 received, 1.75% packet loss, time 40317ms
+rtt min/avg/max/mdev = 5.956/7.494/9.082/0.520 ms
+
+
+TEST: PING
+TIME: 1705383157
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 398 received, 0.5% packet loss, time 40339ms
+rtt min/avg/max/mdev = 5.802/7.679/12.580/0.708 ms
+
+
+TEST: BANDWIDTH
+Ping: 14.479 ms
+Download: 0.70 Mbit/s
+Upload: 275.33 Mbit/s
+
+
+TEST: PING
+TIME: 1705383239
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 395 received, 1.25% packet loss, time 40305ms
+rtt min/avg/max/mdev = 6.162/7.537/12.143/0.633 ms
+
+
+TEST: PING
+TIME: 1705383299
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 339 received, 15.25% packet loss, time 40462ms
+rtt min/avg/max/mdev = 5.957/7.490/10.498/0.547 ms
+
+
+TEST: PING
+TIME: 1705383360
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 385 received, 3.75% packet loss, time 40345ms
+rtt min/avg/max/mdev = 5.365/7.562/11.914/0.632 ms
+
+
+TEST: PING
+TIME: 1705383420
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 337 received, 15.75% packet loss, time 40450ms
+rtt min/avg/max/mdev = 5.801/7.661/16.979/0.982 ms
+
+
+TEST: PING
+TIME: 1705383481
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 389 received, 2.75% packet loss, time 40346ms
+rtt min/avg/max/mdev = 5.856/7.559/11.827/0.618 ms
+
+
+TEST: PING
+TIME: 1705383541
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 239 received, 40.25% packet loss, time 40763ms
+rtt min/avg/max/mdev = 5.730/7.474/10.898/0.635 ms
+
+
+TEST: PING
+TIME: 1705383602
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 357 received, 10.75% packet loss, time 40424ms
+rtt min/avg/max/mdev = 6.102/7.650/12.619/0.677 ms
+
+
+TEST: PING
+TIME: 1705383663
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+400 packets transmitted, 345 received, 13.75% packet loss, time 40423ms
+rtt min/avg/max/mdev = 5.370/7.581/13.087/0.763 ms
