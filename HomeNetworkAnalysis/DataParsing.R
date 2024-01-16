@@ -4,6 +4,7 @@
 library(tidyverse)
 library(gridExtra)
 library(readr)
+#install.packages("ggpubr")
 
 #crawl log file with grep() and assemble into dataframe
 #NOTE works with data created in initial log file format in early experiments.
@@ -248,16 +249,16 @@ if(length(rtt_avg) < data_length){
   # Create a dataframe
   data <- data.frame(
     ref = header_values["REF"] %>% as.character() %>% rep(length(time_data)),
-    isp = header_values["ISP"] %>% as.factor() %>% rep(length(time_data)),
-    lan_hardware = header_values["LAN_HARDWARE"] %>% as.factor() %>% rep(length(time_data)),
-    modem = header_values["MODEM"] %>% as.factor() %>% rep(length(time_data)),
+    isp = header_values["ISP"] %>% rep(length(time_data)),
+    lan_hardware = header_values["LAN_HARDWARE"] %>%rep(length(time_data)),
+    modem = header_values["MODEM"] %>% rep(length(time_data)),
     mtu = as.integer(header_values["MTU"]) %>% rep(length(time_data)),
     temp_low = as.integer(header_values["TEMP_LOW"]) %>% rep(length(time_data)),
     temp_high = as.integer(header_values["TEMP_HIGH"]) %>% rep(length(time_data)),
     time_data = as.POSIXct(time_data, origin="1970-01-01", tz="America/Los_Angeles"),
     packets_transmitted = packets_transmitted %>% as.integer(),
     packets_received = packets_received %>% as.integer(),
-    packet_loss = packet_loss %>% replace(is.na(.), 0),
+    packet_loss = (1-packets_received/packets_transmitted)*100,
     rtt_min,
     rtt_avg,
     rtt_max,
@@ -265,6 +266,10 @@ if(length(rtt_avg) < data_length){
     download,
     upload
   )
+  
+  data$isp <- toupper(data$isp) %>% as.factor()
+  data$lan_hardware <- toupper(data$lan_hardware) %>% as.factor()
+  data$modem <- toupper(data$modem) %>% as.factor()
   
   return(data)
 }

@@ -14,16 +14,22 @@ data_directory <- "./Data/"
 #extracts log data from directory. 
 log_data <- process_logs(data_directory)
 str(log_data)
+levels(log_data$isp)
 
 #visualize a daily overview
-dailyISP = "COMCAST"
-start = "2024-1-14"
+dailyISP = "Comcast"
+start = "2024-1-16"
 end = "2024-01-16"
+starttime = "00:00:00"
+endtime = "23:59:59"
 
+source("DataVisualization.R")
 log_data %>%
-  filter(between(time_data, as.Date(start), as.Date(end))) %>% 
-  filter(isp == dailyISP) %>%
-  visualization_daily_network()
+  #filter(between(time_data, as.Date(start), as.Date(end))) %>%
+  filter(between(time_data, as.POSIXct(paste(start, starttime)), as.POSIXct(paste(end, endtime)))) %>%
+  filter(isp == toupper(dailyISP)) %>%
+  visualization_daily_network(plot_title = paste(dailyISP, ": ", start, " to ", end, sep=""))
+
 # 
 # #create boxplot comparing rtt_avg, download, upload, jitter, and packet_loss for all ISP levels
 # visualization_boxplot(log_data, log_data$isp, log_data$rtt_avg, "Ping (ms) by ISP")
