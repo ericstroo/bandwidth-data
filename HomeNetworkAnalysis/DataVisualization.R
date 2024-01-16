@@ -4,11 +4,7 @@ visualization_daily_network <- function(log_data) {
   time_range <- range(log_data$time_data)
   # Plotting rtt_avg over time with red error bars, dots for rtt_avg, and red X for specific condition
   
-ping_data = log_data %>% 
-  filter(!is.na(rtt_avg)) %>% 
-  filter(!is.na(rtt_mdev)) %>% 
-  filter(!is.na(packet_loss)) %>%
-  filter(!is.na(packets_received)) %>%
+ping_data = log_data %>%
   filter(!is.na(packets_transmitted))
 
   plot_rtt <- ping_data %>%
@@ -16,19 +12,21 @@ ping_data = log_data %>%
     geom_errorbar(aes(y = rtt_avg, ymin = rtt_avg - rtt_mdev, ymax = rtt_avg + rtt_mdev), 
                   width = .5, linewidth = 0.5, color = "orange", alpha = .2) +
     geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev <= 30),
-               size = .1, color="orange") +
+               size = .5, color="orange") +
     geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev > 30),
                shape = 5, color = "red", size = 3) +  # Red X for specific condition
-    geom_col(aes(y = packet_loss, group = 1), position = position_dodge(width = 0.1), color = NA, fill = "red", alpha = 0.8) +  # Bar chart layer
+    geom_col(aes(y = packet_loss, group = 1), position = position_dodge(width = 0.1), color = NA, fill = "red", alpha = 0.5) +  # Bar chart layer
     scale_y_continuous(
       "Ping (ms)", 
       limits = c(0, 100),
-      sec.axis = sec_axis(~ . * 1, name = "Packet Loss")  # Secondary axis (adjust the transformation as needed)
+      sec.axis = sec_axis(~ . * 1, name = "Packet Loss (%)")  # Secondary axis (adjust the transformation as needed)
     ) +
     scale_x_datetime(limits = time_range, 
                      date_breaks = "1 hour",
                      date_labels = "%H:%M %p") +
-    labs(title = "Ping Over Time with Bar Chart Overlay") +
+    labs(title = "Ping Over Time with Bar Chart Overlay",
+         x = "Time",
+         y = "Ping (ms)") +
     theme_minimal()
     #theme(axis.text.y.right = element_text(color = "red", alpha = 0.1))  # Style for the secondary axis
   
@@ -59,9 +57,6 @@ plot_bandwidth <- bandwidth_data %>%
           legend.key.width=unit(1, "lines"), 
           legend.key.height=unit(1, "lines"))
 
-  
-
-  
   # Combine the plots
   grid.arrange(plot_bandwidth, plot_rtt, ncol = 1)
 }

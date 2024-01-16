@@ -1,0 +1,524 @@
+REF: 00
+ISP: CENTURYLINK
+LAN_HARDWARE: OMADA
+MODEM: ISP_GATEWAY
+MTU: 1492
+TEMP_LOW: 25
+TEMP_HIGH: 36
+
+TEST: PING
+TIME: 1705372248
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 98 received, 90.2% packet loss, time 15046ms
+rtt min/avg/max/mdev = 6.229/7.558/11.742/0.759 ms, ipg/ewma 15.061/7.155 ms
+
+
+TEST: PING
+TIME: 1705372280
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 47 received, +2 errors, 95.3% packet loss, time 15723ms
+rtt min/avg/max/mdev = 6.234/7.584/10.382/0.955 ms, ipg/ewma 15.738/7.625 ms
+
+
+TEST: PING
+TIME: 1705372312
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 95 received, 90.5% packet loss, time 15282ms
+rtt min/avg/max/mdev = 5.616/7.510/12.205/1.113 ms, ipg/ewma 15.297/7.063 ms
+
+
+TEST: PING
+TIME: 1705372345
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 33 received, 96.7% packet loss, time 15778ms
+rtt min/avg/max/mdev = 5.415/7.270/10.081/1.108 ms, ipg/ewma 15.794/7.429 ms
+
+
+TEST: PING
+TIME: 1705372377
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 32 received, 96.8% packet loss, time 16006ms
+rtt min/avg/max/mdev = 5.649/7.392/9.267/0.908 ms, ipg/ewma 16.021/7.476 ms
+
+
+TEST: PING
+TIME: 1705372411
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 19 received, 98.1% packet loss, time 16012ms
+rtt min/avg/max/mdev = 6.605/8.617/24.193/3.797 ms, pipe 2, ipg/ewma 16.028/8.707 ms
+
+
+TEST: PING
+TIME: 1705372444
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 49 received, 95.1% packet loss, time 15766ms
+rtt min/avg/max/mdev = 5.691/7.580/16.350/1.462 ms, pipe 2, ipg/ewma 15.782/7.277 ms
+
+
+TEST: PING
+TIME: 1705372476
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 28 received, 97.2% packet loss, time 16014ms
+rtt min/avg/max/mdev = 5.971/7.495/8.911/0.711 ms, ipg/ewma 16.030/7.539 ms
+
+
+TEST: PING
+TIME: 1705372509
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 30 received, 97% packet loss, time 15969ms
+rtt min/avg/max/mdev = 5.374/7.240/9.210/1.013 ms, ipg/ewma 15.985/7.014 ms
+
+
+TEST: PING
+TIME: 1705372542
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 29 received, 97.1% packet loss, time 15972ms
+rtt min/avg/max/mdev = 5.971/7.800/9.854/0.965 ms, ipg/ewma 15.988/7.904 ms
+
+
+TEST: PING
+TIME: 1705372575
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 29 received, 97.1% packet loss, time 15859ms
+rtt min/avg/max/mdev = 5.879/7.513/10.014/0.814 ms, ipg/ewma 15.875/7.642 ms
+
+
+TEST: PING
+TIME: 1705372608
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 47 received, 95.3% packet loss, time 15739ms
+rtt min/avg/max/mdev = 5.873/8.015/13.129/1.413 ms, ipg/ewma 15.754/8.267 ms
+
+
+TEST: PING
+TIME: 1705372641
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 33 received, 96.7% packet loss, time 15965ms
+rtt min/avg/max/mdev = 5.724/7.200/11.435/1.252 ms, ipg/ewma 15.980/7.212 ms
+
+
+TEST: PING
+TIME: 1705372674
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 32 received, 96.8% packet loss, time 15832ms
+rtt min/avg/max/mdev = 5.789/7.854/15.212/1.802 ms, ipg/ewma 15.847/9.009 ms
+
+
+TEST: PING
+TIME: 1705372707
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 24 received, 97.6% packet loss, time 15791ms
+rtt min/avg/max/mdev = 5.866/7.423/9.170/0.895 ms, ipg/ewma 15.806/7.646 ms
+
+
+TEST: PING
+TIME: 1705372740
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 14 received, +2 errors, 98.6% packet loss, time 16032ms
+rtt min/avg/max/mdev = 5.987/7.422/12.474/1.575 ms, ipg/ewma 16.048/7.483 ms
+
+
+TEST: PING
+TIME: 1705372773
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 7 received, 99.3% packet loss, time 16070ms
+rtt min/avg/max/mdev = 6.665/7.351/9.075/0.740 ms, ipg/ewma 16.085/7.184 ms
+
+
+TEST: PING
+TIME: 1705372806
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 18 received, +2 errors, 98.2% packet loss, time 15840ms
+rtt min/avg/max/mdev = 5.800/8.323/15.320/1.892 ms, ipg/ewma 15.855/8.311 ms
+
+
+TEST: PING
+TIME: 1705372839
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 5 received, +2 errors, 99.5% packet loss, time 15952ms
+rtt min/avg/max/mdev = 7.944/8.369/9.968/0.799 ms, ipg/ewma 15.967/8.159 ms
+
+
+TEST: PING
+TIME: 1705372872
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16026ms
+
+
+
+TEST: BANDWIDTH
+
+
+TEST: PING
+TIME: 1705372915
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, +1 errors, 100% packet loss, time 15995ms
+
+
+
+TEST: PING
+TIME: 1705372958
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16017ms
+
+
+
+TEST: PING
+TIME: 1705373001
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16023ms
+
+
+
+TEST: PING
+TIME: 1705373044
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 15999ms
+
+
+
+TEST: PING
+TIME: 1705373087
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16002ms
+
+
+
+TEST: PING
+TIME: 1705373130
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16015ms
+
+
+
+TEST: PING
+TIME: 1705373173
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16006ms
+
+
+
+TEST: PING
+TIME: 1705373216
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16030ms
+
+
+
+TEST: PING
+TIME: 1705373259
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 15994ms
+
+
+
+TEST: PING
+TIME: 1705373302
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16042ms
+
+
+
+TEST: PING
+TIME: 1705373345
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16014ms
+
+
+
+TEST: PING
+TIME: 1705373388
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16017ms
+
+
+
+TEST: PING
+TIME: 1705373431
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16022ms
+
+
+
+TEST: PING
+TIME: 1705373474
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16023ms
+
+
+
+TEST: PING
+TIME: 1705373517
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16054ms
+
+
+
+TEST: PING
+TIME: 1705373560
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16183ms
+
+
+
+TEST: PING
+TIME: 1705373603
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16183ms
+
+
+
+TEST: PING
+TIME: 1705373647
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16374ms
+
+
+
+TEST: PING
+TIME: 1705373690
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16131ms
+
+
+
+TEST: PING
+TIME: 1705373733
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16143ms
+
+
+
+TEST: BANDWIDTH
+
+
+TEST: PING
+TIME: 1705373776
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16237ms
+
+
+
+TEST: PING
+TIME: 1705373820
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16223ms
+
+
+
+TEST: PING
+TIME: 1705373863
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16363ms
+
+
+
+TEST: PING
+TIME: 1705373906
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16182ms
+
+
+
+TEST: PING
+TIME: 1705373949
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16238ms
+
+
+
+TEST: PING
+TIME: 1705373993
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16131ms
+
+
+
+TEST: PING
+TIME: 1705374036
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16207ms
+
+
+
+TEST: PING
+TIME: 1705374079
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16203ms
+
+
+
+TEST: PING
+TIME: 1705374122
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16251ms
+
+
+
+TEST: PING
+TIME: 1705374165
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16338ms
+
+
+
+TEST: PING
+TIME: 1705374209
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16239ms
+
+
+
+TEST: PING
+TIME: 1705374252
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16247ms
+
+
+
+TEST: PING
+TIME: 1705374295
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16107ms
+
+
+
+TEST: PING
+TIME: 1705374338
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16395ms
+
+
+
+TEST: PING
+TIME: 1705374382
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16203ms
+
+
+
+TEST: PING
+TIME: 1705374425
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16294ms
+
+
+
+TEST: PING
+TIME: 1705374468
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 0 received, 100% packet loss, time 16331ms

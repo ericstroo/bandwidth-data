@@ -4,7 +4,8 @@ lines <- readLines(file_path)
 
 # Extract header information
 headers <- c("REF", "ISP", "LAN_HARDWARE", "MODEM", "MTU", "TEMP_LOW", "TEMP_HIGH")
-header_values <- sapply(headers, function(header) {
+header_values <- sapply(headers,
+                        function(header) {
   line <- grep(paste0(header, ":"), lines, value = TRUE)
   str_extract(line, "(?<=: ).*")
 })
@@ -87,9 +88,9 @@ for (i in seq_along(lines)) {
              packets_transmitted <- c(packets_transmitted, as.numeric(transmitted_received[1]))
              packets_received <- c(packets_received, as.numeric(transmitted_received[2]))
              
-             # if string found for packet loss is 0%, store zero, otherwise store the numeric value
-             if (grepl("0%", lines[i])) {
-               packet_loss <- c(packet_loss, 0)
+             #if string found for packet loss is 0%, store zero, otherwise store the numeric value
+             if (grepl("100%", lines[i])) {
+               packet_loss <- c(packet_loss, 100)
              } else {
                packet_loss <- c(packet_loss, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
              }
@@ -124,9 +125,9 @@ for (i in seq_along(lines)) {
          
   )
 }
-#Add NA to upload and download if its shorter than the other vectors
-#This only occurs when the test is interrupted or ends without a final speedtest.
-
+#Add NA to upload and download, or RTT variables if they shorter than the other vectors
+#This only occurs when 1. the test is interrupted or ends without a final speedtest. 2. the last test had 100% packet loss failure.
+print(packet_loss)
 data_length = max(c(length(time_data),
               length(packets_transmitted),
               length(packets_received),
@@ -140,7 +141,16 @@ if(length(download) < data_length){
   download <- c(download, NA)
   upload <- c(upload, NA)
 }
-  
+
+if(length(rtt_avg) < data_length){
+  rtt_avg <- c(rtt_avg, NA)
+  rtt_max <- c(rtt_max, NA)
+  rtt_min <- c(rtt_min, NA)
+  rtt_mdev <- c(rtt_mdev, NA)
+}
+
+test = data.frame(packet_loss)
+
 # Create a dataframe
 data <- data.frame(
   ref = header_values["REF"] %>% as.character() %>% rep(length(time_data)),

@@ -155,8 +155,8 @@ parse_log_file2 <- function(file_path) {
         upload <- c(upload, as.numeric(str_extract(lines[i+3], "\\d+")))
       }
       else {
-        download <- c(download, 100000)
-        upload <- c(upload, 100000)
+        download <- c(download, NA)
+        upload <- c(upload, NA)
       }
       next
     }
@@ -179,21 +179,14 @@ parse_log_file2 <- function(file_path) {
                next
              }
              
-             #if this is the last loop and its ending on RTT, add NA to bandwidth
-             if(i == length(lines)){
-               print(i)
-               download <- c(download, NA)
-               upload <- c(upload, NA)
-             }
-             
              if(grepl("packets transmitted", lines[i])) {
                transmitted_received <- str_extract_all(lines[i], "\\d+")[[1]]
                packets_transmitted <- c(packets_transmitted, as.numeric(transmitted_received[1]))
                packets_received <- c(packets_received, as.numeric(transmitted_received[2]))
                
                # if string found for packet loss is 0%, store zero, otherwise store the numeric value
-               if (grepl("0%", lines[i])) {
-                 packet_loss <- c(packet_loss, 0)
+               if (grepl("100%", lines[i])) {
+                 packet_loss <- c(packet_loss, 100)
                } else {
                  packet_loss <- c(packet_loss, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
                }
@@ -240,10 +233,17 @@ parse_log_file2 <- function(file_path) {
                       length(rtt_max),
                       length(rtt_mdev)))
   
-  if(length(download) < data_length){
-    download <- c(download, NA)
-    upload <- c(upload, NA)
-  }
+if(length(download) < data_length){
+  download <- c(download, NA)
+  upload <- c(upload, NA)
+}
+
+if(length(rtt_avg) < data_length){
+  rtt_avg <- c(rtt_avg, NA)
+  rtt_max <- c(rtt_max, NA)
+  rtt_min <- c(rtt_min, NA)
+  rtt_mdev <- c(rtt_mdev, NA)
+}
   
   # Create a dataframe
   data <- data.frame(
