@@ -1,0 +1,36 @@
+
+
+TEST: PING
+TIME: 1705371057
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 954 received, 4.6% packet loss, time 7352ms
+rtt min/avg/max/mdev = 5.756/6.975/20.372/0.876 ms, pipe 2, ipg/ewma 7.359/6.698 ms
+
+
+TEST: PING
+TIME: 1705371082
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 960 received, 4% packet loss, time 7400ms
+rtt min/avg/max/mdev = 5.258/7.072/20.780/0.845 ms, pipe 2, ipg/ewma 7.407/6.792 ms
+
+
+TEST: PING
+TIME: 1705371106
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 954 received, 4.6% packet loss, time 7457ms
+rtt min/avg/max/mdev = 5.298/7.046/14.878/0.711 ms, ipg/ewma 7.464/6.732 ms
+
+
+TEST: PING
+TIME: 1705371131
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+--- 1.1.1.1 ping statistics ---
+1000 packets transmitted, 953 received, 4.7% packet loss, time 7246ms
+rtt min/avg/max/mdev = 5.655/6.883/28.482/1.104 ms, pipe 3, ipg/ewma 7.252/7.333 ms
