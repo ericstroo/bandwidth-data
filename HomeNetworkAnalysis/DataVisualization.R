@@ -19,7 +19,7 @@ visualization_daily_network <- function(log_data, plot_title) {
   plot_rtt <- ping_data %>%
     ggplot(aes(x = time_data)) +
     geom_errorbar(aes(y = rtt_avg, ymin = rtt_avg - rtt_mdev, ymax = rtt_avg + rtt_mdev), 
-                  width = .5, linewidth = 0.5, color = "orange", alpha = .2) +
+                  width = .5, linewidth = 0.5, color = "orange", alpha = .4) +
     geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev <= 30),
                size = .5, color="orange") +
     geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev > 30),

@@ -14,8 +14,8 @@ log_data <- process_logs(data_directory)
 
 #visualize a daily overview
 dailyISP = "Comcast"
-start = "2024-1-16"
-end = "2024-01-16"
+start = "2024-1-17"
+end = "2024-01-17"
 starttime = "00:00:00"
 endtime = "23:59:59"
 
@@ -23,6 +23,7 @@ log_data %>%
   filter(between(time_data, as.POSIXct(paste(start, starttime)), as.POSIXct(paste(end, endtime)))) %>%
   filter(isp == toupper(dailyISP)) %>%
   visualization_daily_network(plot_title = paste(dailyISP, ": ", start, " to ", end, sep=""))
+
 
 # 
 # #create boxplot comparing rtt_avg, download, upload, jitter, and packet_loss for all ISP levels
