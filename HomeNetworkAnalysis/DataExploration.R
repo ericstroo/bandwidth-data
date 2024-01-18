@@ -4,7 +4,7 @@
 library(tidyverse)
 
 #update working directory and import functions
-#setwd("./HomeNetworkAnalysis/")
+setwd("./HomeNetworkAnalysis/")
 source("DataParsing.R")
 source("DataVisualization.R")
 data_directory <- "./Data/"
@@ -13,9 +13,9 @@ data_directory <- "./Data/"
 log_data <- process_logs(data_directory)
 
 #visualize a daily overview
-dailyISP = "Comcast"
-start = "2024-1-17"
-end = "2024-01-17"
+dailyISP = "CenturyLink"
+start = "2024-1-18"
+end = "2024-01-18"
 starttime = "00:00:00"
 endtime = "23:59:59"
 

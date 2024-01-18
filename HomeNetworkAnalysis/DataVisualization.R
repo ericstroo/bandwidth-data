@@ -30,7 +30,7 @@ visualization_daily_network <- function(log_data, plot_title) {
              color = NA, fill = "red", alpha = 0.5) +  # Bar chart layer
     scale_y_continuous(
       "Ping (ms)", 
-      limits = c(0, 100),
+      limits = c(0, 50),
       sec.axis = sec_axis(~ . * .2, name = "Packet Loss (%)")  # Secondary axis (adjust the transformation as needed)
     ) +
     scale_x_datetime(limits = time_range, 

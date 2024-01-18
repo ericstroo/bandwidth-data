@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATA_FOLDER="./HomeNetworkAnalysis/Data/"
+DATA_FOLDER=./Data/
 
 
 TIME=$1*3600 #Time in hours
@@ -47,7 +47,7 @@ printf "\nTEMP_HIGH: $TEMP_HIGH" >> $DATA_FOLDER/$FILE_NAME.txt
 
 
 while [ $SECONDS -lt $end ]; do
-	for i in $(seq 1 20); do
+	for i in $(seq 1 10); do
 		printf '\n\nTEST: PING\nTIME: ' >> $DATA_FOLDER/$FILE_NAME.txt
 		date +%s >> $DATA_FOLDER/$FILE_NAME.txt
 		printf "${DATECOL}$(date '+%Y-%m-%d %H:%M:%S')${NC}   testing ping...."

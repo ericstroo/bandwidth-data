@@ -169,7 +169,7 @@ if(length(rtt_avg) < data_length){
     isp = header_values["ISP"] %>% rep(length(time_data)),
     lan_hardware = header_values["LAN_HARDWARE"] %>%rep(length(time_data)),
     modem = header_values["MODEM"] %>% rep(length(time_data)),
-    mtu = as.integer(header_values["MTU"]) %>% rep(length(time_data)),
+    mtu = header_values["MTU"] %>% rep(length(time_data)),
     temp_low = as.integer(header_values["TEMP_LOW"]) %>% rep(length(time_data)),
     temp_high = as.integer(header_values["TEMP_HIGH"]) %>% rep(length(time_data)),
     time_data = as.POSIXct(time_data, origin="1970-01-01", tz="America/Los_Angeles"),
