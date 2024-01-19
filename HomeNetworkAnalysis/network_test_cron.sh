@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATA_FOLDER=./Documents/GitHub/bandwidth-data/HomeNetworkAnalysis/Data
+DATA_FOLDER=./Documents/NetworkMonitoring/Data/
 
 
 TIME=$1*3600 #Time in hours

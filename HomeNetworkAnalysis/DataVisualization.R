@@ -12,30 +12,28 @@ visualization_daily_network <- function(log_data, plot_title) {
   # Plot rtt_avg over time with jitter (rtt_mdev) error barsm abd secondary axis for packet loss bar plots
   # Includes and red diamonds for jitter or bandwidth drop events
   
-  # Filter out any rows where packets weren't transmitted which signals a data collection error
-  ping_data = log_data %>%
-    filter(!is.na(packets_transmitted))
-
-  plot_rtt <- ping_data %>%
+  # Create two data sets for bar plots, one with packet loss values <= 100, and another with packet loss values == 999
+  plot_rtt <- log_data %>%
     ggplot(aes(x = time_data)) +
     geom_errorbar(aes(y = rtt_avg, ymin = rtt_avg - rtt_mdev, ymax = rtt_avg + rtt_mdev), 
                   width = .5, linewidth = 0.5, color = "orange", alpha = .4) +
-    geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev <= 30),
+    geom_point(aes(y = rtt_avg), data = log_data %>% filter(rtt_mdev <= 30),
                size = .5, color="orange") +
-    geom_point(aes(y = rtt_avg), data = ping_data %>% filter(rtt_mdev > 30),
+    geom_point(aes(y = rtt_avg), data = log_data %>% filter(rtt_mdev > 30),
                shape = 5, color = "red", size = 3) +  # Red X for specific condition
-    geom_col(width = 30,
+    geom_col(width = 130,
              aes(y = packet_loss, group = 1), 
              position = position_dodge("dodge2"), 
-             color = NA, fill = "red", alpha = 0.5) +  # Bar chart layer
+             color = NA, fill = "#ff9999") +  # Bar chart layer
     scale_y_continuous(
       "Ping (ms)", 
-      limits = c(0, 50),
+      limits = c(0, 500),
       sec.axis = sec_axis(~ . * .2, name = "Packet Loss (%)")  # Secondary axis (adjust the transformation as needed)
     ) +
     scale_x_datetime(limits = time_range, 
                      date_breaks = "1 hour",
                      date_labels = "%H:%M %p") +
+    coord_cartesian(ylim=c(0,40)) +
     labs(title = "RTT and Packet Loss Over Time",
          x = "Time",
          y = "Ping (ms)") +

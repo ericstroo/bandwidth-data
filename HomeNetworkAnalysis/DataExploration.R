@@ -11,9 +11,10 @@ data_directory <- "./Data/"
 
 #extracts log data from directory. 
 log_data <- process_logs(data_directory)
+test_data <- parse_log_file2(paste(data_directory,"2024-01-2024_CenturyLink_Pi_INPROGRESS.txt",sep=""))
 
 #visualize a daily overview
-dailyISP = "CenturyLink"
+dailyISP = "Comcast"
 start = "2024-1-18"
 end = "2024-01-18"
 starttime = "00:00:00"

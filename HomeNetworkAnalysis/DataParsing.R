@@ -12,7 +12,7 @@ parse_log_file2 <- function(file_path) {
   lines <- readLines(file_path)
   
   # Extract header information
-  headers <- c("REF", "ISP", "LAN_HARDWARE", "MODEM", "MTU", "TEMP_LOW", "TEMP_HIGH")
+  headers <- c("REF", "ISP", "LAN_HARDWARE", "MODEM", "MTU")
   header_values <- sapply(headers, function(header) {
     line <- grep(paste0(header, ":"), lines, value = TRUE)
     str_extract(line, "(?<=: ).*")
@@ -39,16 +39,18 @@ parse_log_file2 <- function(file_path) {
                  "Ping:",
                  "Download:",
                  "Upload:")
-  
+  ping_logged = FALSE
+  #print(paste("Initial state of ping_logged:", ping_logged, sep=" "))
   # Iterate over the lines and extract data
   for (i in seq_along(lines)) {
     
     #Scan for new tests
     if(grepl("TEST: PING", lines[i])) {
-      
+      #print("-----new ping test found-----")
       # If expecting a bandwidth test, but encounter a PING test, log NA for bandwidth test
       # Once completing loging a ping test, log NA for a bandwidth test prior to logging next Ping test
       if(expected_step == "BANDWIDTH_CHECK"){
+        #print("LOG NA BANDWIDTH")
         download <- c(download, NA)
         upload <- c(upload, NA)
       }
@@ -60,17 +62,19 @@ parse_log_file2 <- function(file_path) {
     
     #If a Speedtest is encountered, log Speedtest results
     else if(grepl("TEST: BANDWIDTH", lines[i])){
-      
+      #print("new bandwidth test found")
       expected_step <- ""
       
       # If the data exists, log it. Otherwise log NA.
       # There are cases where speedtest will write "TEST: BANDWIDTH" and then fail.
       # These events must be logged as NA to maintain 1:1 alignment with other data vectors
       if(grepl("Download:", lines[i+2])){
+        #print("SUCCESSFUL BANDWIDTH TEST")
         download <- c(download, as.numeric(str_extract(lines[i+2], "\\d+")))
         upload <- c(upload, as.numeric(str_extract(lines[i+3], "\\d+")))
       }
       else {
+        #print("LOG NA BANDWIDTH")
         download <- c(download, NA)
         upload <- c(upload, NA)
       }
@@ -79,6 +83,7 @@ parse_log_file2 <- function(file_path) {
     #Execute Ping Test data parsing when expected step is within Ping test bounds
     switch(expected_step,
            "TIME" = {
+             #print("time data found")
              if(grepl("TIME:", lines[i])) {
                time_data <- c(time_data, as.numeric(str_extract(lines[i], "\\d+")))
              }
@@ -90,30 +95,43 @@ parse_log_file2 <- function(file_path) {
              next
            },
            "PACKETS" = {
-             if (lines[i] == "" || grepl(paste(exceptions, collapse = "|"), lines[i])) {
-               next
-             }
+             #print("--starting packet data scan")
+             #print(paste("ping_logged value:", ping_logged, sep=" "))
+             #If the first line is blank and ping logged hasn't been set to TRUE, it means the test failed. Log packet related data as NA, as well as RTT data, then reset and look for next test.
+              if (lines[i]=="" & ping_logged == FALSE) {
+                #print("packet data not found")
+                packets_transmitted <- c(packets_transmitted, NA)
+                packets_received <- c(packets_received, NA)
+                packet_loss <- c(packet_loss, NA)
+                # rtt_min <- c(rtt_min, NA)
+                # rtt_avg <- c(rtt_avg, NA)
+                # rtt_max <- c(rtt_max, NA)
+                # rtt_mdev <- c(rtt_mdev, NA)
+                expected_step <- ping_steps[3]
+                next
+              }
+              else if(ping_logged == FALSE) {
+                #print("line is not blank")
+                ping_logged = TRUE
+              }
+
+              #If next line is one of the exceptions, skip it, and move on to the next line. If the following line is blank, skip and move onto the next line.
+              if (lines[i] == "" || grepl(paste(exceptions, collapse = "|"), lines[i])) {
+                #print("non data line of text")
+                next
+              }
+              #If the line contains "packets transmitted", log the data.
+              if(grepl("packets transmitted", lines[i])) {
+                #print("packet data found")
+                ping_logged = FALSE
+                transmitted_received <- str_extract_all(lines[i], "\\d+")[[1]]
+                packets_transmitted <- c(packets_transmitted, as.numeric(transmitted_received[1]))
+                packets_received <- c(packets_received, as.numeric(transmitted_received[2]))
+              }
+              #After NA or the data is logged, set expected test to RTT and move on to the next line.
+              expected_step <- ping_steps[3]
+              next
              
-             if(grepl("packets transmitted", lines[i])) {
-               transmitted_received <- str_extract_all(lines[i], "\\d+")[[1]]
-               packets_transmitted <- c(packets_transmitted, as.numeric(transmitted_received[1]))
-               packets_received <- c(packets_received, as.numeric(transmitted_received[2]))
-               
-               # if string found for packet loss is 0%, store zero, otherwise store the numeric value
-               if (grepl("100%", lines[i])) {
-                 packet_loss <- c(packet_loss, 100)
-               } else {
-                 packet_loss <- c(packet_loss, as.numeric(str_extract(lines[i], "\\d+\\.\\d+")))
-               }
-             }
-             else {
-               # Expected PACKETS but not found, insert NA
-               packets_transmitted <- c(packets_transmitted, NA)
-               packets_received <- c(packets_received, NA)
-               packet_loss <- c(packet_loss, NA)
-             }
-             expected_step <- ping_steps[3]
-             next
            },
            "RTT" = {
              if(grepl("rtt min/avg/max/mdev", lines[i])) {
@@ -151,18 +169,22 @@ parse_log_file2 <- function(file_path) {
                       length(rtt_max),
                       length(rtt_mdev)))
   
-if(length(download) < data_length){
-  download <- c(download, NA)
-  upload <- c(upload, NA)
-}
-
-if(length(rtt_avg) < data_length){
-  rtt_avg <- c(rtt_avg, NA)
-  rtt_max <- c(rtt_max, NA)
-  rtt_min <- c(rtt_min, NA)
-  rtt_mdev <- c(rtt_mdev, NA)
-}
+  if(length(download) < data_length){
+    download <- c(download, NA)
+    upload <- c(upload, NA)
+  }
   
+  if(length(rtt_avg) < data_length){
+    rtt_avg <- c(rtt_avg, NA)
+    rtt_max <- c(rtt_max, NA)
+    rtt_min <- c(rtt_min, NA)
+    rtt_mdev <- c(rtt_mdev, NA)
+  }
+  
+  
+  
+  
+   
   # Create a dataframe
   data <- data.frame(
     ref = header_values["REF"] %>% as.character() %>% rep(length(time_data)),
@@ -170,12 +192,12 @@ if(length(rtt_avg) < data_length){
     lan_hardware = header_values["LAN_HARDWARE"] %>%rep(length(time_data)),
     modem = header_values["MODEM"] %>% rep(length(time_data)),
     mtu = header_values["MTU"] %>% rep(length(time_data)),
-    temp_low = as.integer(header_values["TEMP_LOW"]) %>% rep(length(time_data)),
-    temp_high = as.integer(header_values["TEMP_HIGH"]) %>% rep(length(time_data)),
+    temp_low = NA,
+    temp_high = NA,
     time_data = as.POSIXct(time_data, origin="1970-01-01", tz="America/Los_Angeles"),
     packets_transmitted = packets_transmitted %>% as.integer(),
     packets_received = packets_received %>% as.integer(),
-    packet_loss = (1-packets_received/packets_transmitted)*100,
+    packet_loss = (1-(packets_received/packets_transmitted))*100,
     rtt_min,
     rtt_avg,
     rtt_max,
@@ -189,6 +211,8 @@ if(length(rtt_avg) < data_length){
   data$isp <- toupper(data$isp) %>% as.factor()
   data$lan_hardware <- toupper(data$lan_hardware) %>% as.factor()
   data$modem <- toupper(data$modem) %>% as.factor()
+  #replace packet loss NA with 100
+  data$packet_loss <- replace(data$packet_loss, is.na(data$packet_loss), 100)
   
   return(data)
 }
