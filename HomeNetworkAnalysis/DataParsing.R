@@ -180,7 +180,11 @@ parse_log_file2 <- function(file_path) {
     rtt_min <- c(rtt_min, NA)
     rtt_mdev <- c(rtt_mdev, NA)
   }
-  
+  if(length(packets_transmitted) < data_length){
+    packets_transmitted <- c(packets_transmitted, NA)
+    packets_received <- c(packets_received, NA)
+    packet_loss <- c(packet_loss, NA)
+  }
   
   
   

@@ -14,9 +14,9 @@ log_data <- process_logs(data_directory)
 #test_data <- parse_log_file2(paste(data_directory,"2024-01-2024_CenturyLink_Pi_INPROGRESS.txt",sep=""))
 
 #visualize a daily overview
-dailyISP = "CenturyLink"
-start = "2024-1-19"
-end = "2024-01-19"
+dailyISP = "Comcast"
+start = "2024-1-21"
+end = "2024-01-21"
 starttime = "00:00:00"
 endtime = "23:59:59"
 file_path = paste(".Visualizations/", dailyISP, "_", start, ".png", sep="")
@@ -25,7 +25,7 @@ file_path = paste(".Visualizations/", dailyISP, "_", start, ".png", sep="")
 log_data %>%
   filter(between(time_data, as.POSIXct(paste(start, starttime)), as.POSIXct(paste(end, endtime)))) %>%
   filter(isp == toupper(dailyISP)) %>%
-  save_visualization_daily_network(plot_title = paste(dailyISP, ": ", start, " to ", end, sep=""), file_path)
+  visualization_daily_network(plot_title = paste(dailyISP, ": ", start, " to ", end, sep=""))
 
 # 
 # #create boxplot comparing rtt_avg, download, upload, jitter, and packet_loss for all ISP levels
