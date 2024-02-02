@@ -13,10 +13,27 @@ visualization_daily_network <- function(log_data, plot_title) {
   
   #set "date_breaks" for x-axis based on length of time_Range using switch function
   #scale is date_breaks = 1 hour for 1 day, 6 hours for 2 days - 5 days, 12 hours for 5+ days
-  if(num_days == 1){ date_breaks_scale = "1 hour"} 
-  else if(num_days <= 3) {date_breaks_scale = "4 hours"}
-  else if(num_days <= 5){date_breaks_scale = "6 hours"}
-  else {date_breaks_scale = "12 hours"}
+  print(paste("num_days: ", num_days))
+  if(num_days <= 1){
+    date_breaks_scale = "2 hours"
+    minor_breaks_scale = "1 hour"
+    date_labels_format = "%H:%M %p"
+  } 
+  else if(num_days <= 3) {
+    date_breaks_scale = "12 hours"
+    minor_breaks_scale = "4 hours"
+    date_labels_format = "%H:%M %p"
+  }
+  else if(num_days <= 8){
+    date_breaks_scale = "1 day"
+    minor_breaks_scale = "4 hours"
+    date_labels_format = "%D"
+  }
+  else {
+    date_breaks_scale = "1 day"
+    minor_breaks_scale = "12 hours"
+    date_labels_format = "%D"
+  }
   
   scaling_factor <- 1/(num_days*.7)
   # Plot rtt_avg over time with jitter (rtt_mdev) error barsm abd secondary axis for packet loss bar plots
@@ -31,7 +48,7 @@ visualization_daily_network <- function(log_data, plot_title) {
                size = .5*scaling_factor, color="orange") +
     geom_point(aes(y = rtt_avg), data = log_data %>% filter(rtt_mdev > 30),
                shape = 5, color = "red", size = 3) +  # Red X for specific condition
-    geom_col(width = 130*scaling_factor,
+    geom_col(width = 60*scaling_factor,
              aes(y = packet_loss, group = 1), 
              position = position_dodge("dodge2"), 
              color = NA, fill = "#ff9999") +  # Bar chart layer
@@ -41,8 +58,10 @@ visualization_daily_network <- function(log_data, plot_title) {
       sec.axis = sec_axis(~ . * .2, name = "Packet Loss (%)")  # Secondary axis (adjust the transformation as needed)
     ) +
     scale_x_datetime(limits = time_range, 
+                     expand = c(0,0),
                      date_breaks = date_breaks_scale,
-                     date_labels = "%H:%M %p") +
+                     date_minor_breaks = minor_breaks_scale,
+                     date_labels = date_labels_format) +
     coord_cartesian(ylim=c(0,40)) +
     labs(title = "RTT and Packet Loss Over Time",
          x = "Time",
@@ -67,8 +86,10 @@ visualization_daily_network <- function(log_data, plot_title) {
                shape = 5, color = "red", size = 3) +  # Red dots for downloads < 10
     scale_color_manual(values = c("Upload" = "purple", "Download" = "cyan")) +
     scale_x_datetime(limits = time_range, 
+                     expand = c(0,0),
                      date_breaks = date_breaks_scale,
-                     date_labels = "%H:%M %p") +
+                     date_minor_breaks = minor_breaks_scale,
+                     date_labels = date_labels_format) +
     labs(title = "Upload and Download Over Time",
          x = "Time",
          y = "Bandwidth (Mbit/s)",
